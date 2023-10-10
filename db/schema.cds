@@ -7,8 +7,8 @@ entity Threads : managed {
     answers     : Association to many Answers on answers.thread = $self; 
     title       : String(15);
     content     : String(100);
-    upvotes     : Integer;
-    downvotes   : Integer;
+    upvotes     : Integer default 0;
+    downvotes   : Integer default 0;
     updatedAt   : DateTime
 }
 
