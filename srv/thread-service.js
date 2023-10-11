@@ -73,4 +73,10 @@ module.exports = (srv) => {
         }
     })
 
+    srv.on('READ', 'Author', async(req,next) => {
+        const {$search} = req._query;
+        console.log($search)
+       return next()
+    })
+
 }
