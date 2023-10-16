@@ -61,3 +61,18 @@ Content-Type: application/json
 {
     "ID": "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
 }
+
+###
+# Create a thread
+GET http://localhost:4004/odata/v4/service/thread/Thread
+Content-Type: application/json
+
+{
+    "ID": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "author": "John Doe",
+    "title": "Voltics Hans",
+    "content": "This is the content of my first thread",
+    "upvotes": 4,
+    "downvotes": 2,
+    "updatedAt": "2022-02-21T12:30:00.000Z"
+}

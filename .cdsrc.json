@@ -1,1 +1,35 @@
-{}
+{
+    "[development]": {
+        "auth": {
+            "passport": {
+                "strategy": "mock",
+                "users": {
+                    "forum.manager@tester.sap.com": {
+                        "password": "initial",
+                        "ID": "forummanager",
+                        "userAttributes": {
+                            "email": "forum.manager@tester.sap.com"
+                        },
+                        "roles": ["ForumManager"]
+                    },
+                    "john.doe@mail.com": {
+                        "password": "initial",
+                        "ID": "john",
+                        "userAttributes": {
+                            "email": "john.doe@mail.com"
+                        },
+                        "roles": ["ForumManager"]
+                    },
+                    "jane.smith@mail.com": {
+                        "password": "initial",
+                        "ID": "7f031ab2-d2c9-474d-bc93-7d939cac49d5",
+                        "userAttributes": {
+                            "email": "jane.smith@mail.com"
+                        },
+                        "roles": ["ForumManager"]
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,24 @@
 using { forum } from '../db/schema';
 
-@path: 'service/thread'
-service ThreadService {
-    entity Thread as projection on forum.Threads
-    entity Answer as projection on forum.Answers;
-    entity Author as projection on forum.Authors;
+service ThreadService  @(path : 'service/thread'){
+    entity Thread @(restrict : [
+        {
+            grant : [ '*' ],
+            to : [ 'ForumManager' ]
+        }
+    ]) as projection on forum.Threads
+    entity Answer @(restrict : [
+        {
+            grant : [ '*' ],
+            to : [ 'ForumManager' ]
+        }
+    ]) as projection on forum.Answers;
+    entity Author @(restrict : [
+        {
+            grant : [ '*' ],
+            to : [ 'ForumManager' ]
+        }
+    ]) as projection on forum.Authors;
     
     type message {
         code: Integer;

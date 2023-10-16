@@ -5,8 +5,8 @@ entity Threads : managed {
     key ID      : UUID @(Core.Computed : true);
     author      : Association to Authors;
     answers     : Association to many Answers on answers.thread = $self; 
-    title       : String(15);
-    content     : String(100);
+    title       : String;
+    content     : String;
     upvotes     : Integer default 0;
     downvotes   : Integer default 0;
     updatedAt   : DateTime
@@ -14,7 +14,8 @@ entity Threads : managed {
 
 entity Authors {
     key ID  : UUID @(Core.Computed : true);
-    name    : String(20);
+    name    : String;
+    email   : String;
     threads  : Association to many Threads on threads.author = $self;
     answers : Association to many Answers on answers.author = $self;
 }
